@@ -9,7 +9,7 @@ const mongoose = require("mongoose");
 const NewPost = require("./mongoDb/post");  // import mongo model
 const NewFeedback = require("./mongoDb/feedback");  // import mongo model
 
-const URL = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@jyotideep.0w39sqr.mongodb.net/Jyotideep?retryWrites=true&w=majority`;
+const URL = `${process.env.DATABASE}`;
 mongoose
   .connect(URL) // connect mongoose
   .then(() => console.log("Connected!"));
