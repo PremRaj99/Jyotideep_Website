@@ -1,5 +1,3 @@
-require("dotenv").config();
-
 function openContact() {
   window.location = "/contact";
 }
