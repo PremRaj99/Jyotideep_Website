@@ -38,7 +38,8 @@ function redirectDevloper() {
 
 // get data from the server  and pagination
 
-const baseURL = `${process.env.BASE_URL}/PostTemplate`;
+const baseURL = `https://jyotideep.onrender.com/PostTemplate`;
+// const baseURL = `${process.env.BASE_URL}/PostTemplate`;
 
 async function getPostData() {
   const res = await fetch(baseURL, {
