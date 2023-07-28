@@ -144,6 +144,7 @@ li {
 }
 
 .nav-bar .left .logo {
+  display: none;
   width: 50px;
   aspect-ratio: 1/1;
   background-color: #999;
@@ -260,6 +261,7 @@ li {
 
 .about-us-container .left .disc {
   max-width: 50ch;
+  font-size: 1.2rem;
   word-spacing: 0.3em;
   line-height: 1.6rem;
   text-indent: 100px;
@@ -267,13 +269,21 @@ li {
 
 .about-us-container .right {
   width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .about-us-container .right .image-section {
-  /* width: 500px;
-  height: 500px; */
-  /* aspect-ratio: 4/5; */
-  background-color: #999;
+  width: 70%;
+  height: 70%;
+  aspect-ratio: 4/5;
+  /* background-color: #999; */
+}
+
+.about-us-container .right .image-section img {
+  height: 100%;
+  object-fit: cover;
 }
 
 /* hero section */
