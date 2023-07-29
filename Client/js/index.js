@@ -106,7 +106,7 @@ function refreshPostPage(totalData, data) {
                   <div class="disc">
                       ${summary}
                   </div>
-                  <button class="primary-button CTA-button" onclick='OpenPost_Defination( ${JSON.stringify(e)})' >Read More</button>
+                  <button class="primary-button CTA-button" onclick=`+`OpenPost_Defination( ${JSON.stringify(e)})`+` >Read More</button>
                   </div>
                   <div class="right">
                   <div class="image-section">
