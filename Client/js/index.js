@@ -13,10 +13,10 @@ function OpenPost() {
 function OpenGallery() {
   window.open("/gallery", "_blank");
 }
-function OpenPost_Defination(title, authorName, date, disc, img) {
-  let sessionArray = {title, authorName, date, disc, img};
-  // console.log(sessionArray);
-  sessionStorage.setItem('postItem', JSON.stringify(sessionArray));
+function OpenPost_Defination(e) {
+  e = JSON.stringify(e);
+  // console.log(e);
+  sessionStorage.setItem('postItem', e);
   // console.log("hit");
   window.location = "/post_defination";
 }
@@ -39,7 +39,7 @@ function redirectDevloper() {
 // get data from the server  and pagination
 
 const baseURL = `https://jyotideep.onrender.com/PostTemplate`;
-// const baseURL = `${process.env.BASE_URL}/PostTemplate`;
+// const baseURL = `http://localhost:80/PostTemplate`;
 
 async function getPostData() {
   const res = await fetch(baseURL, {
@@ -93,7 +93,6 @@ function refreshPostPage(totalData, data) {
   const element = data.slice(startIndex, endIndex);
   element.forEach((e, i) => {
     let { title, authorName, date, summary, disc, img } = e;   
-
     const PostTemplate = `
                   <div class="post">
                   <div class="left">
@@ -107,7 +106,7 @@ function refreshPostPage(totalData, data) {
                   <div class="disc">
                       ${summary}
                   </div>
-                  <button class="primary-button CTA-button" onclick="OpenPost_Defination( '${title}', '${authorName}', '${date}', '${disc}', '${img}')" >Read More</button>
+                  <button class="primary-button CTA-button" onclick='OpenPost_Defination( ${JSON.stringify(e)})' >Read More</button>
                   </div>
                   <div class="right">
                   <div class="image-section">
